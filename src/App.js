@@ -19,6 +19,9 @@ const App = () => {
       <Display feedback={"hyvä"} count={good}/>
       <Display feedback={"neutraali"} count={neutral}/>
       <Display feedback={"huono"} count={bad}/>
+      <p>kaikki: {good + neutral + bad}</p>
+      <p>keskiarvo: {(good + neutral + bad) / 3}</p>
+      <p>positiivisia palautteita: {good/(bad + neutral+ good)*100} %</p>
     </div>
   )
 }
@@ -32,7 +35,17 @@ const Button = (props) => {
 
 const Display = (props) => {
   return (
-    <div>{props.feedback} {props.count}</div>
+    <div>
+      {props.feedback} {props.count}
+      </div>
+  )
+}
+
+const Average = (props) => {
+  return (
+    <>
+
+    </>
   )
 }
 
