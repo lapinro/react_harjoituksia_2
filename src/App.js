@@ -29,6 +29,15 @@ const Button = (props) => {
 }
 
 const Statistics = (props) => {
+  if (props.good === 0 && props.neutral === 0 && props.bad === 0)
+{
+  return (
+    <>
+    ei palautetta
+    </>
+  )
+}
+else {
   return (
     <>
       <p>hyvä: {props.good}</p>
@@ -39,6 +48,8 @@ const Statistics = (props) => {
       <p>positiivisia palautteita: {props.good/(props.bad + props.neutral+ props.good)*100} %</p>
     </>
   )
+}
+
 }
 
 export default App
