@@ -16,32 +16,24 @@ const App = () => {
       <Button set={setBad} fb={bad} text={"huono"}/>
 
       <h3>Statistiikka</h3>
-      <Display feedback={"hyvä"} count={good}/>
-      <Display feedback={"neutraali"} count={neutral}/>
-      <Display feedback={"huono"} count={bad}/>
       <Statistics good={good} neutral={neutral} bad={bad}/>
     </div>
   )
 }
 
 const Button = (props) => {
-  
+ 
   return (
     <button onClick={() => props.set(props.fb +1)}>{props.text}</button>
-  )
-}
-
-const Display = (props) => {
-  return (
-    <div>
-      {props.feedback} {props.count}
-      </div>
   )
 }
 
 const Statistics = (props) => {
   return (
     <>
+      <p>hyvä: {props.good}</p>
+      <p>neutraali: {props.neutral}</p>
+      <p>huono: {props.bad}</p>
       <p>kaikki: {props.good + props.neutral + props.bad}</p>
       <p>keskiarvo: {(props.good + props.neutral + props.bad) / 3}</p>
       <p>positiivisia palautteita: {props.good/(props.bad + props.neutral+ props.good)*100} %</p>
