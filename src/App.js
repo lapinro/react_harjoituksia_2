@@ -40,16 +40,25 @@ const Statistics = (props) => {
 else {
   return (
     <>
-      <p>hyvä: {props.good}</p>
-      <p>neutraali: {props.neutral}</p>
-      <p>huono: {props.bad}</p>
-      <p>kaikki: {props.good + props.neutral + props.bad}</p>
-      <p>keskiarvo: {(props.good + props.neutral + props.bad) / 3}</p>
-      <p>positiivisia palautteita: {props.good/(props.bad + props.neutral+ props.good)*100} %</p>
+    <StatisticLine text="hyvä" value ={props.good}/>
+    <StatisticLine text="neutraali" value ={props.neutral}/>
+    <StatisticLine text="huono" value ={props.bad}/>
+    <StatisticLine text="kaikki:" value ={props.good + props.neutral + props.bad}/>
+    <StatisticLine text="keskiarvo:" value={(props.good + props.neutral + props.bad) / 3}/>
+    <StatisticLine text="positiivisia palautteita: " value={props.good/(props.bad + props.neutral+ props.good)*100}/>
     </>
   )
 }
 
+}
+
+const StatisticLine = (props) => {
+  return (
+    <>
+    <p>{props.text} {props.value}</p>
+       </>
+
+  )
 }
 
 export default App
